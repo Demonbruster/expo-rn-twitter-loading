@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Animated } from 'react-native';
+import { StyleSheet, Text, View, Animated, Image } from 'react-native';
 import MaskedView from '@react-native-masked-view/masked-view'
 
 export default function App() {
@@ -53,26 +53,28 @@ export default function App() {
     })
   }
 
+  const img = require("./assets/twt.png");
+
   return (
-    <View style={{ flex: 1, height: '100%' }}>
+    <View style={{ flex: 1 }}>
       {colorLayer}
-      <MaskedView style={{ flex: 1, height: '100%' }} maskElement={
+      <MaskedView style={{ flex: 1 }} maskElement={
         <View style={{
-          backgroundColor: 'transparent',
+          // backgroundColor: 'transparent',
           flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          {/* <Animated.Image source={require("./assets/twt.png")} style={[{ width: 500 }]} resizeMode="contain" /> */}
-          <Animated.Text
+          {/* <Animated.Text
             style={[{
               fontSize: 60,
               color: 'black',
               fontWeight: 'bold',
-            }, imageScale]}
-          >
+            }]}
+            >
             Basic Mask
-          </Animated.Text>
+          </Animated.Text> */}
+          <Animated.Image source={img} style={[{ width: 500, height: 500 }, imageScale]} />
         </View>
       }>
         {whiteLayer}
